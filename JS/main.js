@@ -21,7 +21,6 @@ let SCORE_COUNT = 1;
 })();
 const movePlayer = (e) => {
    BLOCKS_DIV[PLAEYR_INDEX].classList.remove("player");
-   // console.log(e);
    if (e.code === 'ArrowLeft' && PLAEYR_INDEX > BLOCKS_DIV.length - COUNT_ROW) {
       PLAEYR_INDEX--;
    }
@@ -31,6 +30,30 @@ const movePlayer = (e) => {
    BLOCKS_DIV[PLAEYR_INDEX].classList.add("player");
 }
 document.addEventListener('keydown', movePlayer);
+
+function delegirovan(){
+   let wrapp = document.querySelectorAll('.wrapper');
+   for (let i = 0; i < wrapp.length; i++) {
+      movePlayerArrow(wrapp[i]);
+   }
+}
+delegirovan();
+function movePlayerArrow(Domelem) {
+   Domelem.addEventListener('click', function(e){
+      BLOCKS_DIV[PLAEYR_INDEX].classList.remove("player");
+      if (e.target.className == 'fas fa-arrow-alt-circle-left'){
+         if(PLAEYR_INDEX > BLOCKS_DIV.length - COUNT_ROW){
+            PLAEYR_INDEX--;
+         }
+      }
+      if (e.target.className == 'fas fa-arrow-alt-circle-right'){
+         if (PLAEYR_INDEX < BLOCKS_DIV.length - 1){
+            PLAEYR_INDEX++;
+         }
+      }
+      BLOCKS_DIV[PLAEYR_INDEX].classList.add("player");
+   });
+}
 
 const moveEnemies = () => {
    const leftBlocksEnemies = INDEX_ENEMY[0] % COUNT_ROW === 0;
@@ -68,12 +91,12 @@ const moveEnemies = () => {
       EndGame();
       return;
    }
-   setTimeout(moveEnemies, 300);
+   setTimeout(moveEnemies, 400);
 };
 moveEnemies();
 
 const Fire = (e) => {
-   if (e.which === 1) {
+   if (e.which === 1 && e.target.classList.contains('enemy')) {
       let bulletIndex = PLAEYR_INDEX;
       const Flybullet = () => {
          BLOCKS_DIV[bulletIndex].classList.remove('bullet');
@@ -111,6 +134,7 @@ function Score(SCORE_COUNT) {
 }
 
 function GameResalt() {
+   const wrapp = document.querySelector('.wrapper');
    const Popap = document.createElement('div');
    const Modal = document.createElement('div');
    const Text = document.createElement('p');
@@ -123,7 +147,7 @@ function GameResalt() {
    Text.className = 'Popap__Text';
    Play_btn.textContent = 'play';
    Exit_btn.textContent = 'EXIT';
-   document.body.append(Popap);
+   wrapp.append(Popap);
    Popap.append(Modal);
    Modal.append(Text);
    Text.append(Play_btn, Exit_btn);

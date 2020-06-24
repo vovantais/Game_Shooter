@@ -124,7 +124,7 @@ h6 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 20px auto;
+  margin: 20px auto 30px auto;
   justify-self: center;
   border: 3px solid #f3e84d;
   width: 646px;
@@ -142,6 +142,7 @@ h6 {
   background-size: cover;
   background-position: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .player {
@@ -160,7 +161,6 @@ h6 {
 .Score__text {
   color: wheat;
   text-align: center;
-  font-size: 30px;
   display: inline-block;
   position: absolute;
   top: 15px;
@@ -284,9 +284,50 @@ h6 {
   }
 }
 
+.btn__left {
+  color: #f3e84d;
+  text-align: center;
+  display: none;
+  position: absolute;
+  bottom: -60px;
+  left: 20px;
+}
+
+@media (max-width: 780px) {
+  .btn__left {
+    font-size: calc(40px + 25.5 * ((100vw -320px) / 1400));
+  }
+}
+
+@media (min-width: 780px) {
+  .btn__left {
+    font-size: calc(40px + 15 * (100vw / 1400));
+  }
+}
+
+.btn__rigth {
+  color: #f3e84d;
+  position: absolute;
+  bottom: -60px;
+  right: 20px;
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .btn__rigth {
+    font-size: calc(40px + 25.5 * ((100vw -320px) / 1400));
+  }
+}
+
+@media (min-width: 780px) {
+  .btn__rigth {
+    font-size: calc(40px + 15 * (100vw / 1400));
+  }
+}
+
 @media (max-width: 780px) {
   .game {
-    margin: 10px auto;
+    margin: 70px auto;
     width: 566px;
     height: 566px;
   }
@@ -314,6 +355,12 @@ h6 {
     top: -90px;
     left: 150px;
     line-height: 40px;
+  }
+  .btn__left {
+    display: inline-block;
+  }
+  .btn__rigth {
+    display: inline-block;
   }
 }
 

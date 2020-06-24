@@ -30,7 +30,7 @@
 .game {
    display: flex;
    flex-wrap: wrap;
-   margin: 20px auto;
+   margin: 20px auto 30px auto;
    justify-self: center;
    border: 3px solid $BDColor;
    width: $mult-size;
@@ -46,6 +46,7 @@
    background-size: cover;
    background-position: center;
    border-radius: 50%;
+   cursor: pointer;
 }
 .player {
    background: url(/img/gan.png) no-repeat;
@@ -61,7 +62,6 @@
 .Score__text {
    color: $ScoreColor;
    text-align: center;
-   font-size: 30px;
    display: inline-block;
    position: absolute;
    top: 15px;
@@ -129,9 +129,27 @@
    cursor: pointer;
    display: block;
 }
+.btn__left {
+   color: $BDColor;
+   @include adaptiv-font(55, 40);
+   text-align: center;
+   display: none;
+   position: absolute;
+   bottom: -60px;
+   left: 20px;
+}
+.btn__rigth {
+   color: $BDColor;
+   @include adaptiv-font(55, 40);
+   position: absolute;
+   bottom: -60px;
+   right: 20px;
+   display: none;
+}
+
 @media (max-width: 780px) {
    .game {
-      margin: 10px auto;
+      margin: 70px auto;
       @include adaptive(20, 28);
    }
    .game div {
@@ -157,6 +175,13 @@
       top: -90px;
       left: 150px;
       line-height: 40px;
+   }
+
+   .btn__left {
+      display: inline-block;
+   }
+   .btn__rigth {
+      display: inline-block;
    }
 }
 @media (max-width: 580px) {
