@@ -41,12 +41,12 @@ delegirovan();
 function movePlayerArrow(Domelem) {
    Domelem.addEventListener('click', function(e){
       BLOCKS_DIV[PLAEYR_INDEX].classList.remove("player");
-      if (e.target.className == 'fas fa-arrow-alt-circle-left'){
+      if (e.target.className === 'fas fa-arrow-alt-circle-left'){
          if(PLAEYR_INDEX > BLOCKS_DIV.length - COUNT_ROW){
             PLAEYR_INDEX--;
          }
       }
-      if (e.target.className == 'fas fa-arrow-alt-circle-right'){
+      if (e.target.className === 'fas fa-arrow-alt-circle-right'){
          if (PLAEYR_INDEX < BLOCKS_DIV.length - 1){
             PLAEYR_INDEX++;
          }

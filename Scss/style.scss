@@ -12,7 +12,8 @@
    display: flex;
    flex-direction: column;
    position: relative;
-   background: url(/img/full_screen4.jpg) no-repeat;
+   background: url('https://s2.best-wallpaper.net/wallpaper/3840x2160/1806/Halo-Wars-video-games_3840x2160.jpg') no-repeat;
+   // адрес картинки в  папке img  /img/full_screen4.jpg 
    background-size: cover;
    background-position: center;
    &::before {
