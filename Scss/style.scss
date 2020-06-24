@@ -1,0 +1,179 @@
+// Переменные
+@import "_variable";
+// Обнеление
+@import "_nullstyle";
+// Для адаптива текста
+@import "_textmixin";
+// Для адаптива поля
+@import "_adaptivemixin";
+// Шрифты подключаем
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   background: url(/img/full_screen4.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
+   &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $BdModal;
+   }
+}
+.game {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 20px auto;
+   justify-self: center;
+   border: 3px solid $BDColor;
+   width: $mult-size;
+   height: $mult-size;
+   position: relative;
+}
+.game div {
+   width: $size-cell;
+   height: $size-cell;
+}
+.enemy {
+   background: url(/img/Zombie.png) no-repeat;
+   background-size: cover;
+   background-position: center;
+   border-radius: 50%;
+}
+.player {
+   background: url(/img/gan.png) no-repeat;
+   background-size: cover;
+   background-position: center;
+   border-radius: 50% 50% 50% / 100% 100% 0 0;
+}
+.bullet {
+   background: url(/img/bullet.png) no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+.Score__text {
+   color: $ScoreColor;
+   text-align: center;
+   font-size: 30px;
+   display: inline-block;
+   position: absolute;
+   top: 15px;
+   right: 15px;
+   text-transform: uppercase;
+   @include adaptiv-font(24, 16);
+}
+.Popap {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 100;
+   background: $BdModal;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.Popap__Modal {
+   width: 300px;
+   height: 200px;
+   background: $ColorModal;
+   text-transform: uppercase;
+   letter-spacing: 2.4px;
+   border-radius: 30px;
+}
+.Popap__Text {
+   @include adaptiv-font(24, 18);
+   line-height: 200px;
+   text-align: center;
+}
+.Play__btn {
+   width: 100px;
+   height: 50px;
+   text-transform: uppercase;
+   background: $Btn_play;
+   color: $ColorText;
+   letter-spacing: 1.8px;
+   @include adaptiv-font(20, 15);
+   border-radius: 20px;
+   text-align: center;
+   line-height: 50px;
+   position: relative;
+   top: -70px;
+   left: 20px;
+   cursor: pointer;
+   display: block;
+}
+.Exit__btn {
+   width: 100px;
+   height: 50px;
+   text-transform: uppercase;
+   background: $Btn_exit;
+   color: $ColorText;
+   letter-spacing: 1.8px;
+   @include adaptiv-font(20, 16);
+   border-radius: 20px;
+   position: relative;
+   position: relative;
+   top: -120px;
+   left: 180px;
+   cursor: pointer;
+   display: block;
+}
+@media (max-width: 780px) {
+   .game {
+      margin: 10px auto;
+      @include adaptive(20, 28);
+   }
+   .game div {
+      @include adaptiveSizeCell(28);
+   }
+   .Popap__Modal {
+      width: 250px;
+      height: 150px;
+   }
+   .Popap__Text {
+      line-height: 150px;
+   }
+   .Play__btn {
+      width: 80px;
+      height: 40px;
+      top: -50px;
+      left: 20px;
+      line-height: 40px;
+   }
+   .Exit__btn {
+      width: 80px;
+      height: 40px;
+      top: -90px;
+      left: 150px;
+      line-height: 40px;
+   }
+}
+@media (max-width: 580px) {
+   .game {
+      margin: 100px auto;
+      @include adaptive(20, 20);
+   }
+   .game div {
+      @include adaptiveSizeCell(20);
+   }
+}
+@media (max-width: 450px) {
+   .game {
+      margin: 150px auto;
+      @include adaptive(20, 15);
+   }
+   .game div {
+      @include adaptiveSizeCell(15);
+   }
+}

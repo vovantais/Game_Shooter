@@ -1,0 +1,12 @@
+//На размер ячейки 
+@mixin adaptiveSizeCell($value-size ) {
+   $size-cell: $value-size + px;
+   width:$size-cell;
+   height: $size-cell;
+}
+// Блок game размеры
+@mixin adaptive( $value-count,$value-size) {
+   $mult-size: (($value-count * $value-size) + $border) + px;
+   width:$mult-size;
+   height: $mult-size;
+}

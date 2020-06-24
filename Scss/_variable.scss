@@ -1,0 +1,25 @@
+// Переменная шрифта
+$fontFamily: "Lato";
+// Размеры дивов
+$value-size: 32;
+// Размеры ячеек
+$size-cell: $value-size + px;
+// Количество клеток в строке
+$value-count: 20;
+// Бордер по трипикселя с двух сторон поэтому 6
+$border: 6;
+// Блок game размеры
+$mult-size: (($value-count * $value-size) + $border) + px;
+// Цвет бордера поля
+$BDColor: #f3e84d;
+// Цвет счета
+$ScoreColor: wheat;
+// Цвет модального окна
+$ColorModal: greenyellow;
+// Цвет текста
+$ColorText: white;
+// Цвет кнопок
+$Btn_play: rgb(5, 52, 206);
+$Btn_exit: rgb(206, 5, 15);
+// Затемнение модального окна и before
+$BdModal: rgba(0, 0, 0, 0.5);
