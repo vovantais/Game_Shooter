@@ -31,7 +31,7 @@ const movePlayer = (e) => {
 }
 document.addEventListener('keydown', movePlayer);
 
-function delegirovan(){
+function delegirovan() {
    let wrapp = document.querySelectorAll('.wrapper');
    for (let i = 0; i < wrapp.length; i++) {
       movePlayerArrow(wrapp[i]);
@@ -39,15 +39,15 @@ function delegirovan(){
 }
 delegirovan();
 function movePlayerArrow(Domelem) {
-   Domelem.addEventListener('click', function(e){
+   Domelem.addEventListener('click', function (e) {
       BLOCKS_DIV[PLAEYR_INDEX].classList.remove("player");
-      if (e.target.className === 'fas fa-arrow-alt-circle-left'){
-         if(PLAEYR_INDEX > BLOCKS_DIV.length - COUNT_ROW){
+      if (e.target.className === 'fas fa-arrow-alt-circle-left') {
+         if (PLAEYR_INDEX > BLOCKS_DIV.length - COUNT_ROW) {
             PLAEYR_INDEX--;
          }
       }
-      if (e.target.className === 'fas fa-arrow-alt-circle-right'){
-         if (PLAEYR_INDEX < BLOCKS_DIV.length - 1){
+      if (e.target.className === 'fas fa-arrow-alt-circle-right') {
+         if (PLAEYR_INDEX < BLOCKS_DIV.length - 1) {
             PLAEYR_INDEX++;
          }
       }
