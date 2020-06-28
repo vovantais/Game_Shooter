@@ -93,6 +93,7 @@ h6 {
 
 /*--------------------*/
 .wrapper {
+   margin: 0;
    display: -webkit-box;
    display: -ms-flexbox;
    display: flex;
@@ -101,7 +102,7 @@ h6 {
    -ms-flex-direction: column;
    flex-direction: column;
    position: relative;
-   background: url(/img/full_screen4.jpg) no-repeat;
+   background: url(../img/full_screen4.jpg) no-repeat;
    background-size: cover;
    background-position: center;
 }
@@ -138,7 +139,7 @@ h6 {
 }
 
 .enemy {
-   background: url(/img/Zombie.png) no-repeat;
+   background: url(../img/Zombie.png) no-repeat;
    background-size: cover;
    background-position: center;
    border-radius: 50%;
@@ -146,14 +147,14 @@ h6 {
 }
 
 .player {
-   background: url(/img/gan.png) no-repeat;
+   background: url(../img/gan.png) no-repeat;
    background-size: cover;
    background-position: center;
    border-radius: 50% 50% 50% / 100% 100% 0 0;
 }
 
 .bullet {
-   background: url(/img/bullet.png) no-repeat;
+   background: url(../img/bullet.png) no-repeat;
    background-size: cover;
    background-position: center;
 }
