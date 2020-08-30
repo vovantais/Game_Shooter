@@ -105,6 +105,7 @@ h6 {
    background: url(../img/full_screen4.jpg) no-repeat;
    background-size: cover;
    background-position: center;
+   height: 100vh;
 }
 
 .wrapper::before {

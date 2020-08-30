@@ -17,6 +17,7 @@
    // url img for internet 'https://s2.best-wallpaper.net/wallpaper/3840x2160/1806/Halo-Wars-video-games_3840x2160.jpg'
    background-size: cover;
    background-position: center;
+   height: 100vh;
    &::before {
       content: "";
       width: 100%;
